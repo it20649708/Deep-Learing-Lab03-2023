@@ -1,0 +1,95 @@
+ex -01 --
+
+Plotting the convolution result reveals the locations of the signal's abrupt intensity shifts. These positions line up with the image's edges.
+
+Edges are regions in image processing where there is a noticeable shift in pixel intensity; edge detection filters,
+like the one you used, are made to highlight these shifts. Reacting to decreasing intensity and increasing intensity, 
+respectively, are the filter's positive and negative values.
+
+The points where the signal (or image) has edges can be found by examining the plot of the convolution result.
+These are the locations where the local features of the signal were well matched by the filter. For many computer
+vision and image analysis applications, the edges in a real image correspond to object borders and structural characteristics.
+
+Therefore, 1D convolution is a fundamental technique in image processing for edge detection, feature extraction, and more, 
+helping to highlight and locate important regions in an image.
+
+
+
+
+
+
+For a variety of reasons, increasing the number of training epochs in a neural network might raise the validation error.
+
+
+Why More Epochs Lead to Increasing Validation Errors:
+
+1. Overfitting: 
+       Overfitting is a frequent cause of a rise in validation error. When a model begins to fit training data too closely, 
+       it is said to be overfitting and begins to capture noise in the data rather than broad patterns. The model loses its 
+       ability to generalise to previously unseen data (validation data) as it becomes overly specialised to the training set 
+       of data after training for a longer period of time.
+
+2. Learning Rate Decay:
+       When a learning rate grows too high over time, the model may overshoot the ideal weights and deviate from the loss function's
+       global minimum. When a high starting learning rate is not appropriately regulated throughout training, this can occur.
+
+
+
+Reduction of Validation Error Increase:
+
+1.Early halting: 
+      Early halting is a popular method of reducing overfitting when validation error begins to rise. During training,
+      early stopping entails keeping an eye on the validation error and pausing when it begins to increase. As a result, 
+      the model doesn't overfit and the weights that perform better in generalisation are maintained.
+
+2.Learning Rate Scheduling:
+      Step decay and learning rate annealing are two examples of learning rate schedules that you can use. By progressively 
+      lowering the learning rate during training, these strategies aid in improving model convergence without going over the minimum.
+
+3.Regularisation:
+      Penalise excessively complex models with regularisation methods such as L1 and L2 regularisation. Large weights are discouraged by 
+      regularisation, which might result in overfitting.
+
+
+
+Mini-Batch SGD vs. Batch Gradient Descent:
+
+ Mini-Batch SGD: 
+       This technique involves splitting the dataset into smaller random subsets, or mini-batches, and updating the model's parameters 
+       after each mini-batch is processed. By adding noise and randomness to the training process, this method can assist the system break
+       out of local minima and accelerate convergence. Since several mini-batches can be processed concurrently on various cores or devices,
+       it also benefits from parallel processing.
+
+ Batch Gradient Descent:
+       The model parameters are changed once every epoch in batch gradient descent, where the gradient of the loss function is computed over
+       the entire dataset. Large datasets may cause this technique converge more slowly and to become trapped in local minima, even though it
+       may result in a more stable convergence.
+
+
+
+Benefits of Small-Batch SGD:
+
+1. quicker Convergence:
+       With more frequent model parameter updates and the noise in the gradients helping to avoid local minima, mini-batch SGD can converge quicker 
+      than batch Gradient Descent.
+
+
+
+2. Efficient Memory Usage:
+      Because it processes a subset of the data at a time, it can be trained on enormous datasets with little memory usage.
+
+3. Parallelization:
+      Mini-batch processing can take advantage of contemporary technology, like GPUs and TPUs, to parallelize, which speeds up training.
+
+4. Improved Generalisation:
+     The noise that the mini-batch SGD created can function as a regularizer, enhancing the model's capacity to generalise to previously unobserved data.
+
+
+In summary, mini-batch SGD is favored in deep learning because of its efficiency, faster convergence,
+and better generalization. It is widely used in practice for training neural networks. However, the appropriate 
+batch size and learning rate need to be tuned to achieve optimal results.
+
+
+
+ 
+
